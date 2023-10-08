@@ -27,9 +27,9 @@ const AuthProvider = ({children}) => {
 
     // spy baba 
     useEffect( () => {
-        const unSubscribe = onAuthStateChanged(auth, cUser => {
-            console.log('auth state', cUser);
-            setUser(cUser);
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log('auth state', currentUser);
+            setUser(currentUser);
         });
         return () => {
             unSubscribe();

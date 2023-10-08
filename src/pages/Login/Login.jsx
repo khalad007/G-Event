@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "../shared/Header/Navbar";
+
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
@@ -28,7 +28,7 @@ const Login = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
+
             <div className="bg-[#F3F3F3]">
                 <h2 className="text-3xl font-semibold my-10 text-center pt-10">Login Here</h2>
 

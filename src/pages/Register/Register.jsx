@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "../shared/Header/Navbar";
+
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
@@ -15,14 +15,20 @@ const Register = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        const name = form.get('name');
-        const photo = form.get('photoURL');
-        console.log(email, password, name, photo);
+        const displayName = form.get('displayName');
+        const photoURL = form.get('photoURL');
+        console.log(email, password, displayName, photoURL);
+
+        // const name1 = e.target.name.value;
+        // const email1 = e.target.email.value;
+        // const password1 = e.target.password.value;
+        // const photo1 = e.target.photoURL.value;
+        // console.log(name1, email1, password1,photo1);
 
 
         // create user 
 
-        createUser(email, password, photo)
+        createUser(email, password, photoURL)
             .then(result => {
                 console.log(result.user)
             })
@@ -34,7 +40,7 @@ const Register = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
+
             <div className="bg-[#F3F3F3]">
                 <h2 className="text-3xl font-semibold my-10 text-center pt-10">Register Here</h2>
 
@@ -43,7 +49,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" placeholder="Name" name="name" className="input input-bordered" required />
+                        <input type="text" placeholder="Name" name="displayName" className="input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "eventName": "Melbourne International Games Week 2023 (Hybrid)",
+    "image": "https://i.ibb.co/VthjSZJ/card1.jpg",
+    "price": "$50",
+    "shortDescription": "Join the biggest gaming event of the year!",
+    "longDescription": "After two years of engaging online audiences across the globe, Melbourne International Games Week 2023 (MIGW) returns to Melbourne. Now in its 8th year, MIGW is the biggest games event in Asia Pacific and a fixture on the global calendar, connecting games, technology and culture, with a broad program for industry, educators, and game enthusiasts alike.",
+    "buttonText": "Register Now",
+    "buttonColor": "#49b297"
+  },
+  {
+    "id": 2,
+    "eventName": "Indonesia Game Developer Exchange (IGDX) 2023",
+    "image": "https://i.ibb.co/2WWWP4L/card2.jpg",
+    "price": "Free Entry",
+    "shortDescription": "Compete with the best in the world!",
+    "longDescription": "Indonesia Game Developer Exchange (IGDX) is an annual event, organized by the Ministry of Communication and Informatics in collaboration with the Indonesian Game Association (AGI), as part of the ongoing effort to increase the technical qualities and business capabilities of Indonesian game developer. ",
+    "buttonText": "Sign Up",
+    "buttonColor": "#5c71ee"
+  },
+  {
+    "id": 3,
+    "eventName": "RetroGameCon X 2023",
+    "image": "https://i.ibb.co/KmNk76p/card3.jpg",
+    "price": "$30",
+    "shortDescription": "Experience the future of gaming!",
+    "longDescription": "RetroGameCon returns to Syracuse this fall on October 7-8, 2023! New York State’s largest gaming expo, celebrating 10 amazing years of beautiful nostalgia and our retro gaming community.",
+    "buttonText": "Get Tickets",
+    "buttonColor": "#665ec1"
+  },
+  {
+    "id": 4,
+    "eventName": "Poznan Game Arena 2023",
+    "image": "https://i.ibb.co/YPw7yVC/card4.jpg",
+    "price": "$25",
+    "shortDescription": "Discover innovative indie games!",
+    "longDescription": "Poznan Game Arena 2023 has an extensive entertainment programme, game premieres, eSports tournaments, starts of Twitch and gaming YouTube, outstanding cosplayers, hundreds of attractions and – most importantly – many fantastic exhibitors with the best offer prepared especially for our visitors. It must be remembered that PGA is mostly a fair event, which is why we focus so much on the quality of exhibition.",
+    "buttonText": "Explore Now",
+    "buttonColor": "#332d75"
+  },
+  {
+    "id": 5,
+    "eventName": "PAX Aus 2023",
+    "image": "https://i.ibb.co/4N3x0cD/card5.jpg",
+    "price": "$40",
+    "shortDescription": "Relive the nostalgia of classic games!",
+    "longDescription": "PAX Aus 2023 is a celebration of gaming and gaming culture featuring thought-provoking panels, a massive expo hall filled with the best publishers and studios, new game demos, musical performances, tournaments, and an experience unlike any other.",
+    "buttonText": "Buy Pass",
+    "buttonColor": "#f5b31f"
+  },
+  {
+    "id": 6,
+    "eventName": "Game Industry Conference (GIC) 2023",
+    "image": "https://i.ibb.co/yX5dxPY/card6.jpg",
+    "price": "$20",
+    "shortDescription": "Join the ultimate LAN gaming experience!",
+    "longDescription": "The Game Industry Conference takes place alongside the Poznan Game Arena, one of the most important and largest game expos in Europe. Over 76,000 visitors enjoy the show by testing games and hardware from more than 220 expositors.",
+    "buttonText": "Join Now",
+    "buttonColor": "#023401"
+  }
+]

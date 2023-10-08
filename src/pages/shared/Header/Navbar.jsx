@@ -21,7 +21,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar  bg-gray-300">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">G-EventO</a>
+                <a className="btn btn-ghost normal-case text-xl">G-Event<span className="text-[#F75B5F]">O</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -41,17 +41,18 @@ const Navbar = () => {
             <div className="navbar-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img src={defaultUserPic} />
+                    <img src={user ? user.profilePicture || defaultUserPic : defaultUserPic} alt="User Profile" />
                     </div>
                 </label>
+
                 {
-                    user ?
+                    user ? <>
+                        <span>{user.email}</span>
                         <button onClick={handleSignOut} className="btn btn-neutral">Sign Out</button>
+                    </>
                         :
                         <Link to="/login"><button className="btn btn-neutral">Login</button></Link>
                 }
-
-
             </div>
         </div>
     );
