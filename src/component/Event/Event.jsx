@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const Event = ({ cards }) => {
 
-    const { eventName,image,price,shortDescription,buttonColor } = cards;
+    const { id, eventName, image, price, shortDescription, buttonColor } = cards;
 
 
     return (
@@ -11,9 +12,11 @@ const Event = ({ cards }) => {
             <div className="card-body">
                 <h2 className="card-title">{eventName}</h2>
                 <p>{shortDescription}</p>
-                <p>{price}</p>
+                <p>Entry Fee : {price}</p>
                 <div className="card-actions justify-end">
-                    <button style={{backgroundColor:buttonColor}} className="btn btn-primary">More</button>
+                    <Link to={`/cards/${id}`}>
+                        <button style={{ backgroundColor: buttonColor }} className="btn btn-primary">Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

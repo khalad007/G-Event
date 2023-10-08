@@ -5,11 +5,16 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import Contact from "../pages/Contact/Contact";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
+import Error from "../pages/Error/Error";
+import CardDetails from "../pages/CardDetails/CardDetails";
+import PrivateRoute from "./PrivateRoute";
+
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -31,6 +36,11 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/cards/:id',
+                element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
+                loader: () => fetch('/card.json')
             }
         ]
     }
