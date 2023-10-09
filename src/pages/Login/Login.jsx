@@ -1,15 +1,18 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
+    const [loginError,setLoginError ] = useState('');
+    const [success,setSuccess ] = useState('');
     const location = useLocation();
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); 
 
     const handleLogin = e => {
         e.preventDefault();
@@ -22,11 +25,13 @@ const Login = () => {
         signIn(email,password)
         .then(result => {
             console.log(result.user)
-
+            setSuccess(swal("Good job!", "Login Success.!", "success"))
             navigate(location?.state ? location.state : '/');
+
         })
         .catch(error => {
             console.error(error);
+            setLoginError(error.message);
         })
     }
 
@@ -56,6 +61,9 @@ const Login = () => {
                         <button className="btn btn-primary">Login</button>
                     </div>
                 </form>
+                {
+                    loginError && <p className="text-center text-red-700 font-bold mt-3">{loginError}*</p>
+                }
 
                 <p className="text-base font-semibold text-center py-10">Don't Have An Account ?<Link className="text-[#F75B5F]" to="/register">Register</Link></p>
             </div>

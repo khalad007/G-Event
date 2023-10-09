@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+
+    const [registerError,setRegisterError ] = useState('');
+    const [success,setSuccess ] = useState('');
+
+
+    
+
+    
 
     const handleRegister = e => {
         e.preventDefault();
@@ -17,20 +26,37 @@ const Register = () => {
         const displayName = form.get('displayName');
         const photoURL = form.get('photoURL');
 
+        setRegisterError('');
+        setSuccess('');
+
+        if(password.length < 6){
+            setRegisterError('Password is less then 6 Character');
+            return;
+        }
+        else if(!/[A-Z]/.test(password)){
+            setRegisterError("don't have a capital letter")
+        }
+        else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\]/.test(password)){
+            setRegisterError("Password Don't 've a special Character")
+        }
+        
         // Create user with profile information
         createUser(email, password, photoURL, displayName)
             .then((user) => {
                 // User registration successful
-                console.log( user);
-
+                console.log(user);
+                // setSuccess("Registration Success.!")
+                setSuccess(swal("Good job!", "Registration Success.!", "success"))
                 
-                setUser(user);
+                
+                // setUser(user);
 
                 // redirect the user to a different page here
             })
             .catch((error) => {
                 // Handle registration error
                 console.error(error);
+                setRegisterError(error.message)
             });
     }
 
@@ -65,14 +91,20 @@ const Register = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input type="password" placeholder="password" name="password" className="input input-bordered" required />
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
+                        
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary mb-7">Register </button>
                     </div>
                 </form>
+                {
+                    registerError && <p className="text-center text-red-700 font-bold">{registerError}*</p>
+                }
+                {
+                    success && <p className="text-center text-green-600 font-bold">{success}*</p>
+                }
+               
+                
                 <p className="text-base font-semibold text-center py-10">Already Have An Account ?
                     <Link className="text-[#F75B5F]" to="/login">Login</Link></p>
             </div>
