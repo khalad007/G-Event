@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import app from "../Firebase/firebase.config";
 
 export const AuthContext = createContext(null);
@@ -11,11 +11,22 @@ const AuthProvider = ({children}) => {
     const  [loading,setLoading] = useState(true);
 
     //for registration 
-    const createUser = (email,password,photoURL) => {
-        setLoading(true);
-        return createUserWithEmailAndPassword(auth,email,password,photoURL);
-    }
 
+
+    const createUser = (email, password, photoURL, displayName) => {
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password)
+          .then((result) => {
+            return updateProfile(result.user, { displayName, photoURL }) // Update user profile
+              .then(() => {
+                setUser(result.user); // Update the user state
+                setLoading(false);
+              });
+          });
+      }
+
+    
+//,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,.........................................................
     // for login 
     const signIn = (email,password) => {
         setLoading(true);
@@ -28,6 +39,9 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
+    
+    //for update
+    
 
     // spy baba 
     useEffect( () => {

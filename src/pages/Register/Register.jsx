@@ -11,30 +11,27 @@ const Register = () => {
 
     const handleRegister = e => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
         const displayName = form.get('displayName');
         const photoURL = form.get('photoURL');
-        console.log(email, password, displayName, photoURL);
 
-        // const name1 = e.target.name.value;
-        // const email1 = e.target.email.value;
-        // const password1 = e.target.password.value;
-        // const photo1 = e.target.photoURL.value;
-        // console.log(name1, email1, password1,photo1);
+        // Create user with profile information
+        createUser(email, password, photoURL, displayName)
+            .then((user) => {
+                // User registration successful
+                console.log( user);
 
+                
+                setUser(user);
 
-        // create user 
-
-        createUser(email, password, photoURL)
-            .then(result => {
-                console.log(result.user)
+                // redirect the user to a different page here
             })
-            .catch(error => {
-                console.error(error)
-            })
+            .catch((error) => {
+                // Handle registration error
+                console.error(error);
+            });
     }
 
 

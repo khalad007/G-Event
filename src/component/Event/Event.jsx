@@ -12,7 +12,7 @@ const Event = ({ cards }) => {
             <div className="card-body">
                 <h2 className="card-title">{eventName}</h2>
                 <p>{shortDescription}</p>
-                <p>Entry Fee : {price}</p>
+                <p className="font-bold">Entry Fee : {price}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/cards/${id}`}>
                         <button style={{ backgroundColor: buttonColor }} className="btn btn-primary">Details</button>

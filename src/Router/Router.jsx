@@ -8,6 +8,8 @@ import Login from "../pages/Login/Login";
 import Error from "../pages/Error/Error";
 import CardDetails from "../pages/CardDetails/CardDetails";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../pages/Blog/Blog";
+import Shop from "../pages/Shop/Shop";
 
 
 const router = createBrowserRouter([
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
                 path: '/cards/:id',
                 element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
                 loader: () => fetch('/card.json')
+            },
+            {
+                path: '/blog',
+                element: <PrivateRoute><Blog></Blog></PrivateRoute>
+            },
+            {
+                path: '/shop',
+                element: <PrivateRoute><Shop></Shop></PrivateRoute>
             }
         ]
     }

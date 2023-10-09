@@ -16,12 +16,13 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
-        <li><NavLink to="/login">Login</NavLink></li>
+        <li><NavLink to="/blog">Blog</NavLink></li>
+        <li><NavLink to="/shop">Shop</NavLink></li>
 
     </>
 
     return (
-        <div className="navbar bg-gradient-to-r from-[#F3F3F3] to-[#EAEAEA]">
+        <div className="navbar bg-gradient-to-r from-[#F3F3F3] to-[#EAEAEA]"> 
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,13 +42,13 @@ const Navbar = () => {
             <div className="navbar-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                    <img src={user ? user.profilePicture || defaultUserPic : defaultUserPic} alt="User Profile" />
+                    <img src={user ? user.photoURL || defaultUserPic : defaultUserPic} alt="User Profile" />
                     </div>
                 </label>
 
                 {
                     user ? <>
-                        <span>{user.email}</span>
+                        <span className="mr-2 font-semibold">{user.displayName}</span>
                         <button onClick={handleSignOut} className="btn btn-neutral">Sign Out</button>
                     </>
                         :
