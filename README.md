@@ -1,3 +1,7 @@
+<h1>ninth-assignment-112c7.firebaseapp.com</h1>
+
+ninth-assignment-112c7.web.app
+
 ninth-assignment-112c7.firebaseapp.com
 
 <h1>live link    ninth-assignment-112c7.firebaseapp.com </h1>
