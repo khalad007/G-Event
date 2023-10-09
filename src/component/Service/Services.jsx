@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import slide1 from '../../assets/slide1.jpg'
 import slide2 from '../../assets/slide2.jpg'
 import slide3 from '../../assets/slide3.jpeg'
@@ -5,7 +6,7 @@ import slide4 from '../../assets/slide4.jpg'
 import slide5 from '../../assets/slide5.jpg'
 import slide6 from '../../assets/slide6.jpg'
 
-const Services = () => {
+const Services = () => { 
 
     return (
         <div class="carousel w-[90%] mx-[5%] mt-10 h-[60vh] lg:h-[80vh] rounded-lg">
@@ -20,7 +21,7 @@ const Services = () => {
                             </h1>
                             
                             
-                            <button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button>
+                            <Link to="/servicesdetailspage1"><button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button></Link>
                         </div>
 
                     </div>
@@ -35,13 +36,13 @@ const Services = () => {
                 <img src={slide2} class="w-full" />
                 <div
                     class="absolute z-20 flex items-center justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
-                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide2" class="btn btn-circle">❮</a>
                     <div>
                         <div class=" text-center">
                             <h1 class="text-lg lg:text-6xl text-white">Matchmaking
                             </h1>
                            
-                            <button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button>
+                            <Link to="/servicesdetailspage2"><button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button></Link>
                         </div>
 
                     </div>
@@ -56,14 +57,14 @@ const Services = () => {
                 <img src={slide3}  class="w-full" />
                 <div
                     class="absolute z-20 flex items-center justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
-                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide3" class="btn btn-circle">❮</a>
                     <div>
                         <div class=" text-center">
                             <h1 class="text-lg lg:text-6xl text-white">Tournaments and Events
                                 
                             </h1>
                          
-                            <button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button>
+                            <Link to="/servicesdetailspage3"><button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button></Link>
                         </div>
 
                     </div>
@@ -78,13 +79,13 @@ const Services = () => {
                 <img src={slide4}  class="w-full" />
                 <div
                     class="absolute z-20 flex items-center justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
-                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide4" class="btn btn-circle">❮</a>
                     <div>
                         <div class=" text-center">
                             <h1 class="text-lg lg:text-6xl text-white"> Content Creation and Streaming
                             </h1>
                            
-                            <button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button>
+                            <Link to="/servicesdetailspage4"><button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button></Link>
                         </div>
 
                     </div>
@@ -99,13 +100,13 @@ const Services = () => {
                 <img src={slide5}  class="w-full" />
                 <div
                     class="absolute z-20 flex items-center justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
-                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide4" class="btn btn-circle">❮</a>
                     <div>
                         <div class=" text-center">
                             <h1 class="text-lg lg:text-6xl text-white">Community Forums and Social Features
                             </h1>
                            
-                            <button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Shop Now</button>
+                            <Link to="/servicesdetailspage5"><button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button></Link>
                         </div>
 
                     </div>
@@ -120,13 +121,13 @@ const Services = () => {
                 <img src={slide6}  class="w-full" />
                 <div
                     class="absolute z-20 flex items-center justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ">
-                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide5" class="btn btn-circle">❮</a>
                     <div>
                         <div class=" text-center">
                             <h1 class="text-lg lg:text-6xl text-white">Game Marketplace
                             </h1>
                             
-                            <button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button>
+                            <Link to="/servicesdetailspage6"><button class="btn bg-red-500 border-0 mt-11 lg:m-8 text-white">Details</button></Link>
                         </div>
 
                     </div>

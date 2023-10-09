@@ -12,6 +12,16 @@ import Blog from "../pages/Blog/Blog";
 import Shop from "../pages/Shop/Shop";
 
 
+
+
+import ServicesDetailsPage1 from "../pages/ServicesDetailsPage/ServicesDetailsPage1";
+import ServicesDetailsPage2 from "../pages/ServicesDetailsPage/ServicesDetailsPage2";
+import ServicesDetailsPage3 from "../pages/ServicesDetailsPage/ServicesDetailsPage3";
+import ServicesDetailsPage4 from "../pages/ServicesDetailsPage/ServicesDetailsPage4";
+import ServicesDetailsPage5 from "../pages/ServicesDetailsPage/ServicesDetailsPage5";
+import ServicesDetailsPage6 from "../pages/ServicesDetailsPage/ServicesDetailsPage6";
+
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -51,7 +61,31 @@ const router = createBrowserRouter([
             {
                 path: '/shop',
                 element: <PrivateRoute><Shop></Shop></PrivateRoute>
-            }
+            },
+            {
+                path: '/servicesdetailspage6',
+                element: <ServicesDetailsPage6></ServicesDetailsPage6>
+            },
+            {
+                path: '/servicesdetailspage5',
+                element: <ServicesDetailsPage5></ServicesDetailsPage5>
+            },
+            {
+                path: '/servicesdetailspage4',
+                element: <ServicesDetailsPage4></ServicesDetailsPage4>
+            },
+            {
+                path: '/servicesdetailspage3',
+                element: <ServicesDetailsPage3></ServicesDetailsPage3>
+            },
+            {
+                path: '/servicesdetailspage2',
+                element: <ServicesDetailsPage2></ServicesDetailsPage2>
+            },
+            {
+                path: '/servicesdetailspage1',
+                element: <ServicesDetailsPage1></ServicesDetailsPage1>
+            },
         ]
     }
 ]);
