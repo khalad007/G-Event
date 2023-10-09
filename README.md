@@ -1,4 +1,4 @@
-# ninth-assignment-112c7.firebaseapp.com
+ninth-assignment-112c7.firebaseapp.com
 
 <h1>live link    ninth-assignment-112c7.firebaseapp.com </h1>
 
