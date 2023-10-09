@@ -6,6 +6,8 @@
 
 
   <h1>With the  Answer </h1>
+
+  <h3>Well ami ecche kore bangLish likhchi .... sorry for that  ... and dekhiyen answer er arrow buttton e click korle answer dekha jay  </h3>
   
 </div>
 

@@ -3,16 +3,35 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import swal from "sweetalert";
-
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
 
     const { signIn } = useContext(AuthContext);
-    const [loginError,setLoginError ] = useState('');
-    const [success,setSuccess ] = useState('');
+    const [loginError, setLoginError] = useState('');
+    const [success, setSuccess] = useState('');
     const location = useLocation();
 
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
+
+
+    const auth = getAuth();
+    const handleGoogleSignIn = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // Google Sign-In successful, you can handle the user creation or login here
+                const user = result.user;
+                console.log(user);
+                // Redirect or handle the user state as needed
+            })
+            .catch((error) => {
+                // Handle Google Sign-In error
+                console.error(error);
+            });
+    };
+
 
     const handleLogin = e => {
         e.preventDefault();
@@ -20,19 +39,19 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email,password);
+        console.log(email, password);
 
-        signIn(email,password)
-        .then(result => {
-            console.log(result.user)
-            setSuccess(swal("Good job!", "Login Success.!", "success"))
-            navigate(location?.state ? location.state : '/');
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user)
+                setSuccess(swal("Good job!", "Login Success.!", "success"))
+                navigate(location?.state ? location.state : '/');
 
-        })
-        .catch(error => {
-            console.error(error);
-            setLoginError(error.message);
-        })
+            })
+            .catch(error => {
+                console.error(error);
+                setLoginError(error.message);
+            })
     }
 
     return (
@@ -40,6 +59,13 @@ const Login = () => {
 
             <div className="bg-[#F3F3F3]">
                 <h2 className="text-3xl font-semibold my-10 text-center pt-10">Login Here</h2>
+
+                <div className="flex justify-center items-center ">
+                    <button onClick={handleGoogleSignIn} className='flex p-4 text-3xl items-center border rounded bg-slate-300' href="">
+                        <FcGoogle></FcGoogle>
+                        Login With Google
+                    </button>
+                </div>
 
                 <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto">
                     <div className="form-control">

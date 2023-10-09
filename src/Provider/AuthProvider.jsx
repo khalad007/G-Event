@@ -20,6 +20,7 @@ const AuthProvider = ({children}) => {
             return updateProfile(result.user, { displayName, photoURL }) // Update user profile
               .then(() => {
                 setUser(result.user); // Update the user state
+                window.location.reload(true)
                 setLoading(false);
               });
           });
@@ -33,6 +34,7 @@ const AuthProvider = ({children}) => {
         return signInWithEmailAndPassword(auth,email,password)
     }
 
+    
 // for logout 
     const logOut = () =>{
         setLoading(true);
