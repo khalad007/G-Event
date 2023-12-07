@@ -1,13 +1,8 @@
-<h1>ninth-assignment-112c7.firebaseapp.com</h1>
-
-ninth-assignment-112c7.web.app
-
-ninth-assignment-112c7.firebaseapp.com
-
-<h1>live link    ninth-assignment-112c7.firebaseapp.com </h1>
+[Live Link ](https://ninth-assignment-112c7.firebaseapp.com/)
+[Live Link ](https://ninth-assignment-112c7.web.app/)
 
 
-[Live Link Site](ninth-assignment-112c7.firebaseapp.com)
+
 
 
 # Feature Of my site 
